@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cu4ffw88t1mam"]
+
+[ext_resource type="Texture2D" uid="uid://dcoka66elcp5" path="res://res/ui/icons/item/milk_bottle_icon.png" id="1_b27cn"]
+[ext_resource type="Script" uid="uid://dsm37c252p4yb" path="res://src/resources/item/item.gd" id="1_jle3a"]
+
+[resource]
+script = ExtResource("1_jle3a")
+item_name = "Бутылка молока"
+icon = ExtResource("1_b27cn")
+type = "Idle"
+metadata/_custom_type_script = "uid://dsm37c252p4yb"

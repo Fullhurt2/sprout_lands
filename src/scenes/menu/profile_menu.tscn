@@ -1,0 +1,82 @@
+[gd_scene load_steps=5 format=3 uid="uid://028exrnotedx"]
+
+[ext_resource type="Texture2D" uid="uid://bsnbnj1153bk0" path="res://res/ui/menu/profile_menu.png" id="1_tb42x"]
+[ext_resource type="PackedScene" uid="uid://e88jtrekhuop" path="res://src/scenes/menu/parallax.tscn" id="2_10blw"]
+[ext_resource type="Script" uid="uid://cst82k01n3346" path="res://src/scenes/menu/profile_menu.gd" id="2_dc8p5"]
+[ext_resource type="PackedScene" uid="uid://7elk1lsdisti" path="res://src/scenes/button/default_button.tscn" id="3_80upl"]
+
+[node name="profile menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_dc8p5")
+
+[node name="parallax" parent="." instance=ExtResource("2_10blw")]
+
+[node name="profile window" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -121.0
+offset_top = -133.5
+offset_right = 121.0
+offset_bottom = 133.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_tb42x")
+
+[node name="margin" type="MarginContainer" parent="profile window"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 31
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 31
+theme_override_constants/margin_bottom = 29
+
+[node name="vbox cont" type="VBoxContainer" parent="profile window/margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="player name line" type="LineEdit" parent="profile window/margin/vbox cont"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_placeholder_color = Color(0.564706, 0.384314, 0.364706, 0.54902)
+theme_override_colors/font_color = Color(0.564706, 0.384314, 0.364706, 1)
+placeholder_text = "nickname"
+alignment = 1
+max_length = 15
+context_menu_enabled = false
+emoji_menu_enabled = false
+
+[node name="icons grid cont" type="GridContainer" parent="profile window/margin/vbox cont"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 132)
+layout_mode = 2
+theme_override_constants/h_separation = 12
+theme_override_constants/v_separation = 12
+columns = 4
+
+[node name="apply button" parent="profile window/margin/vbox cont" instance=ExtResource("3_80upl")]
+layout_mode = 2
+
+[node name="Label" parent="profile window/margin/vbox cont/apply button" index="0"]
+text = "Сохранить"
+
+[connection signal="text_changed" from="profile window/margin/vbox cont/player name line" to="." method="_on_player_name_line_text_changed"]
+[connection signal="pressed" from="profile window/margin/vbox cont/apply button" to="." method="_on_apply_button_pressed"]
+
+[editable path="profile window/margin/vbox cont/apply button"]

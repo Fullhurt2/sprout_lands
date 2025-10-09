@@ -1,0 +1,114 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1ir2pmq7r1tf"]
+
+[ext_resource type="Script" uid="uid://b8q1bbyarhekt" path="res://src/scenes/menu/search_game_menu.gd" id="1_lw8f8"]
+[ext_resource type="PackedScene" uid="uid://e88jtrekhuop" path="res://src/scenes/menu/parallax.tscn" id="2_vl2j4"]
+[ext_resource type="Texture2D" uid="uid://8jeqe2x3qxvw" path="res://res/ui/menu/search_game_menu.png" id="2_x226b"]
+[ext_resource type="PackedScene" uid="uid://7elk1lsdisti" path="res://src/scenes/button/default_button.tscn" id="3_x226b"]
+
+[node name="search game menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lw8f8")
+
+[node name="parallax" parent="." instance=ExtResource("2_vl2j4")]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = -160.0
+offset_right = 176.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_x226b")
+stretch_mode = 2
+
+[node name="margin" type="MarginContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 22
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 21
+
+[node name="vbox cont" type="VBoxContainer" parent="TextureRect/margin"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="search label" type="Label" parent="TextureRect/margin/vbox cont"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 26)
+layout_mode = 2
+text = "Поиск хостов."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="margin" type="MarginContainer" parent="TextureRect/margin/vbox cont"]
+custom_minimum_size = Vector2(0, 208)
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+
+[node name="scroll cont" type="ScrollContainer" parent="TextureRect/margin/vbox cont/margin"]
+layout_mode = 2
+
+[node name="servers cont" type="VBoxContainer" parent="TextureRect/margin/vbox cont/margin/scroll cont"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="hbox cont" type="HBoxContainer" parent="TextureRect/margin/vbox cont"]
+custom_minimum_size = Vector2(0, 43)
+layout_mode = 2
+theme_override_constants/separation = 72
+alignment = 1
+
+[node name="exit button" parent="TextureRect/margin/vbox cont/hbox cont" instance=ExtResource("3_x226b")]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Label" parent="TextureRect/margin/vbox cont/hbox cont/exit button" index="0"]
+text = "Назад"
+
+[node name="host button" parent="TextureRect/margin/vbox cont/hbox cont" instance=ExtResource("3_x226b")]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Label" parent="TextureRect/margin/vbox cont/hbox cont/host button" index="0"]
+text = "Хост"
+
+[node name="check servers timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="search animation timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="pressed" from="TextureRect/margin/vbox cont/hbox cont/exit button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="TextureRect/margin/vbox cont/hbox cont/host button" to="." method="_on_host_button_pressed"]
+[connection signal="timeout" from="check servers timer" to="." method="_on_check_servers_timer_timeout"]
+[connection signal="timeout" from="search animation timer" to="." method="_on_search_animation_timer_timeout"]
+
+[editable path="TextureRect/margin/vbox cont/hbox cont/exit button"]
+[editable path="TextureRect/margin/vbox cont/hbox cont/host button"]

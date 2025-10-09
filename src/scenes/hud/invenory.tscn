@@ -1,0 +1,168 @@
+[gd_scene load_steps=7 format=3 uid="uid://csj54irsduifc"]
+
+[ext_resource type="Texture2D" uid="uid://dc38bjbmonpcl" path="res://res/ui/hud/hotbar/hotbar.png" id="1_syovb"]
+[ext_resource type="Script" uid="uid://cubfvjunrx0g8" path="res://src/scenes/hud/invenory.gd" id="1_vger0"]
+[ext_resource type="PackedScene" uid="uid://dgku82tjsyvj7" path="res://src/scenes/button/hotbar_button.tscn" id="2_chgix"]
+[ext_resource type="Texture2D" uid="uid://d1hhpjt83jorf" path="res://res/ui/hud/hotbar/inventory_button_normal.png" id="3_4s6p3"]
+[ext_resource type="Texture2D" uid="uid://bjn78msctpahm" path="res://res/ui/hud/hotbar/inventory_button_pressed.png" id="4_vger0"]
+[ext_resource type="Texture2D" uid="uid://dymd1o1kvfdid" path="res://res/ui/hud/hotbar/backpack.png" id="6_qds71"]
+
+[node name="invenory" type="Control"]
+custom_minimum_size = Vector2(240, 119)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_vger0")
+
+[node name="hotbar window" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -48.0
+offset_right = 120.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture = ExtResource("1_syovb")
+stretch_mode = 2
+
+[node name="margin" type="MarginContainer" parent="hotbar window"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 11
+theme_override_constants/margin_top = 11
+theme_override_constants/margin_right = 11
+theme_override_constants/margin_bottom = 11
+
+[node name="hotbar slots" type="HBoxContainer" parent="hotbar window/margin"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="hotbar button" parent="hotbar window/margin/hotbar slots" instance=ExtResource("2_chgix")]
+layout_mode = 2
+is_hotbar_button = true
+
+[node name="hotbar button2" parent="hotbar window/margin/hotbar slots" instance=ExtResource("2_chgix")]
+layout_mode = 2
+is_hotbar_button = true
+
+[node name="hotbar button3" parent="hotbar window/margin/hotbar slots" instance=ExtResource("2_chgix")]
+layout_mode = 2
+is_hotbar_button = true
+
+[node name="hotbar button4" parent="hotbar window/margin/hotbar slots" instance=ExtResource("2_chgix")]
+layout_mode = 2
+is_hotbar_button = true
+
+[node name="hotbar button5" parent="hotbar window/margin/hotbar slots" instance=ExtResource("2_chgix")]
+layout_mode = 2
+is_hotbar_button = true
+
+[node name="hotbar button6" parent="hotbar window/margin/hotbar slots" instance=ExtResource("2_chgix")]
+layout_mode = 2
+is_hotbar_button = true
+
+[node name="open inventory button" type="TextureButton" parent="hotbar window/margin/hotbar slots"]
+layout_mode = 2
+texture_normal = ExtResource("3_4s6p3")
+texture_pressed = ExtResource("4_vger0")
+
+[node name="backpack window" type="TextureRect" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_right = 240.0
+offset_bottom = 73.0
+texture = ExtResource("6_qds71")
+
+[node name="margin" type="MarginContainer" parent="backpack window"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 11
+theme_override_constants/margin_top = 11
+theme_override_constants/margin_right = 11
+theme_override_constants/margin_bottom = 4
+
+[node name="backpack slots" type="GridContainer" parent="backpack window/margin"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 6
+theme_override_constants/v_separation = 6
+columns = 7
+
+[node name="hotbar button" parent="backpack window/margin/backpack slots" instance=ExtResource("2_chgix")]
+layout_mode = 2
+
+[node name="hotbar button2" parent="backpack window/margin/backpack slots" instance=ExtResource("2_chgix")]
+layout_mode = 2
+
+[node name="hotbar button3" parent="backpack window/margin/backpack slots" instance=ExtResource("2_chgix")]
+layout_mode = 2
+
+[node name="hotbar button4" parent="backpack window/margin/backpack slots" instance=ExtResource("2_chgix")]
+layout_mode = 2
+
+[node name="hotbar button5" parent="backpack window/margin/backpack slots" instance=ExtResource("2_chgix")]
+layout_mode = 2
+
+[node name="hotbar button6" parent="backpack window/margin/backpack slots" instance=ExtResource("2_chgix")]
+layout_mode = 2
+
+[node name="hotbar button7" parent="backpack window/margin/backpack slots" instance=ExtResource("2_chgix")]
+layout_mode = 2
+
+[node name="hotbar button8" parent="backpack window/margin/backpack slots" instance=ExtResource("2_chgix")]
+layout_mode = 2
+
+[node name="hotbar button9" parent="backpack window/margin/backpack slots" instance=ExtResource("2_chgix")]
+layout_mode = 2
+
+[node name="hotbar button10" parent="backpack window/margin/backpack slots" instance=ExtResource("2_chgix")]
+layout_mode = 2
+
+[node name="hotbar button11" parent="backpack window/margin/backpack slots" instance=ExtResource("2_chgix")]
+layout_mode = 2
+
+[node name="hotbar button12" parent="backpack window/margin/backpack slots" instance=ExtResource("2_chgix")]
+layout_mode = 2
+
+[node name="hotbar button13" parent="backpack window/margin/backpack slots" instance=ExtResource("2_chgix")]
+layout_mode = 2
+
+[node name="hotbar button14" parent="backpack window/margin/backpack slots" instance=ExtResource("2_chgix")]
+layout_mode = 2
+
+[node name="from_icon" type="TextureRect" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+stretch_mode = 2
+
+[node name="to_icon" type="TextureRect" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+stretch_mode = 2
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="pressed" from="hotbar window/margin/hotbar slots/open inventory button" to="." method="_on_open_inventory_button_pressed"]

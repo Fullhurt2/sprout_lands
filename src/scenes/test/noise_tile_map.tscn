@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://brcsypjhrqcdt"]
+
+[ext_resource type="Texture2D" uid="uid://5u65bnco2xpl" path="res://res/ui/test_tiles.png" id="1_q5exx"]
+[ext_resource type="Script" uid="uid://c0seh8gqwo45q" path="res://src/scenes/test/noise_tile_map.gd" id="2_x5rja"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h5bm0"]
+texture = ExtResource("1_q5exx")
+texture_region_size = Vector2i(1, 1)
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_y7005"]
+tile_size = Vector2i(1, 1)
+sources/0 = SubResource("TileSetAtlasSource_h5bm0")
+
+[node name="noise tile map" type="TileMapLayer"]
+tile_set = SubResource("TileSet_y7005")
+script = ExtResource("2_x5rja")

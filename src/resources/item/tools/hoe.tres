@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://jv2avxqv6yvl"]
+
+[ext_resource type="Script" uid="uid://dsm37c252p4yb" path="res://src/resources/item/item.gd" id="1_gp8rd"]
+[ext_resource type="Texture2D" uid="uid://bps4rst63lqhk" path="res://res/ui/icons/item/hoe_icon.png" id="1_iakr0"]
+
+[resource]
+script = ExtResource("1_gp8rd")
+item_name = "Мотыга"
+icon = ExtResource("1_iakr0")
+type = "Hoe"
+metadata/_custom_type_script = "uid://dsm37c252p4yb"

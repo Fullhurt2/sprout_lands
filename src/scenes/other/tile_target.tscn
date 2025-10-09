@@ -1,0 +1,63 @@
+[gd_scene load_steps=13 format=3 uid="uid://b7n0w432qip7l"]
+
+[ext_resource type="Texture2D" uid="uid://cloylyc73ogwp" path="res://res/sprites/other/tile target/tile_target_down_f0.png" id="1_dhqoh"]
+[ext_resource type="Script" uid="uid://vpiqmmmngo1r" path="res://src/scenes/other/tile_target.gd" id="2_qdysn"]
+[ext_resource type="Texture2D" uid="uid://beb6ofo5b5o57" path="res://res/sprites/other/tile target/tile_target_down_f1.png" id="2_w7jx6"]
+[ext_resource type="Texture2D" uid="uid://d0ogn2h8jmcte" path="res://res/sprites/other/tile target/tile_target_down_f2.png" id="3_m5e13"]
+[ext_resource type="Texture2D" uid="uid://cex2m2aj4wp58" path="res://res/sprites/other/tile target/tile_target_down_f3.png" id="4_16or4"]
+[ext_resource type="Texture2D" uid="uid://yk7w73e42k6n" path="res://res/sprites/other/tile target/tile_target_down_f4.png" id="5_lukr2"]
+[ext_resource type="Texture2D" uid="uid://dw686seto7h7c" path="res://res/sprites/other/tile target/tile_target_up_f0.png" id="6_tuwpv"]
+[ext_resource type="Texture2D" uid="uid://otgwpi2kg7hp" path="res://res/sprites/other/tile target/tile_target_up_f1.png" id="7_i5aa6"]
+[ext_resource type="Texture2D" uid="uid://2edjht1v8dkk" path="res://res/sprites/other/tile target/tile_target_up_f2.png" id="8_kt2dq"]
+[ext_resource type="Texture2D" uid="uid://b004umhje041h" path="res://res/sprites/other/tile target/tile_target_up_f3.png" id="9_4v3ty"]
+[ext_resource type="Texture2D" uid="uid://dv7mhykwqp0og" path="res://res/sprites/other/tile target/tile_target_up_f4.png" id="10_d28ru"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dhqoh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dhqoh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_w7jx6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_m5e13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_16or4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_lukr2")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_tuwpv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_i5aa6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kt2dq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4v3ty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_d28ru")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[node name="tile target" type="AnimatedSprite2D"]
+z_index = 5
+sprite_frames = SubResource("SpriteFrames_dhqoh")
+animation = &"up"
+centered = false
+script = ExtResource("2_qdysn")

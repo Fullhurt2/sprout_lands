@@ -1,0 +1,80 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvjp7hbfi7s5j"]
+
+[ext_resource type="Script" uid="uid://dacqujxfvstwj" path="res://src/scenes/menu/main_menu.gd" id="1_aduvf"]
+[ext_resource type="PackedScene" uid="uid://e88jtrekhuop" path="res://src/scenes/menu/parallax.tscn" id="2_1rk2i"]
+[ext_resource type="Texture2D" uid="uid://bk8quu8q62e5d" path="res://res/ui/menu/main_menu.png" id="3_thlyl"]
+[ext_resource type="PackedScene" uid="uid://cmqs2gwnigwan" path="res://src/scenes/button/main_menu_button.tscn" id="4_o75gf"]
+
+[node name="main menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aduvf")
+
+[node name="parallax" parent="." instance=ExtResource("2_1rk2i")]
+
+[node name="main menu window" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -120.0
+offset_right = 120.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_thlyl")
+stretch_mode = 2
+
+[node name="vbox cont" type="VBoxContainer" parent="main menu window"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="solo button" parent="main menu window/vbox cont" instance=ExtResource("4_o75gf")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" parent="main menu window/vbox cont/solo button" index="0"]
+text = "Играть в одиночку"
+
+[node name="multiplayer button" parent="main menu window/vbox cont" instance=ExtResource("4_o75gf")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" parent="main menu window/vbox cont/multiplayer button" index="0"]
+text = "Играть по сети"
+
+[node name="profile button" parent="main menu window/vbox cont" instance=ExtResource("4_o75gf")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" parent="main menu window/vbox cont/profile button" index="0"]
+text = "Изменить профиль"
+
+[node name="settings button" parent="main menu window/vbox cont" instance=ExtResource("4_o75gf")]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" parent="main menu window/vbox cont/settings button" index="0"]
+text = "Настройки"
+
+[connection signal="pressed" from="main menu window/vbox cont/solo button" to="." method="_on_solo_button_pressed"]
+[connection signal="pressed" from="main menu window/vbox cont/multiplayer button" to="." method="_on_multiplayer_button_pressed"]
+[connection signal="pressed" from="main menu window/vbox cont/profile button" to="." method="_on_profile_button_pressed"]
+
+[editable path="main menu window/vbox cont/solo button"]
+[editable path="main menu window/vbox cont/multiplayer button"]
+[editable path="main menu window/vbox cont/profile button"]
+[editable path="main menu window/vbox cont/settings button"]

@@ -1,0 +1,28 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://dcxjvhr72gw20"]
+
+[ext_resource type="FontFile" uid="uid://cj7ie4spwkhw1" path="res://res/ui/fonts/RuneScape-ENA.ttf" id="1_i2ghf"]
+[ext_resource type="Texture2D" uid="uid://djl1guq72oy28" path="res://res/ui/buttons/line_edit_normal_180x25.png" id="2_outik"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_outik"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_outik"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j7we2"]
+texture = ExtResource("2_outik")
+
+[resource]
+Label/colors/font_color = Color(0.564706, 0.384314, 0.364706, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 1
+Label/font_sizes/font_size = 16
+Label/fonts/font = ExtResource("1_i2ghf")
+Label/styles/normal = SubResource("StyleBoxEmpty_outik")
+LineEdit/fonts/font = ExtResource("1_i2ghf")
+LineEdit/styles/focus = SubResource("StyleBoxFlat_outik")
+LineEdit/styles/normal = SubResource("StyleBoxTexture_j7we2")

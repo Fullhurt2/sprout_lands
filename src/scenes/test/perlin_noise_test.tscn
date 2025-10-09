@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://dvg4rfsn8dc4d"]
+
+[ext_resource type="Script" uid="uid://cr5e5hrix6ydt" path="res://src/scenes/test/perlin_noise_test.gd" id="1_kgebp"]
+[ext_resource type="Texture2D" uid="uid://5u65bnco2xpl" path="res://res/ui/test_tiles.png" id="2_kgebp"]
+
+[sub_resource type="Gradient" id="Gradient_kgebp"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.862745, 0.72549, 0.541176, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fgy3t"]
+gradient = SubResource("Gradient_kgebp")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fgy3t"]
+texture = ExtResource("2_kgebp")
+texture_region_size = Vector2i(1, 1)
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_b3jhm"]
+tile_size = Vector2i(1, 1)
+sources/1 = SubResource("TileSetAtlasSource_fgy3t")
+
+[node name="perlin noise test" type="Node2D"]
+script = ExtResource("1_kgebp")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -1.0
+offset_right = 650.0
+offset_bottom = 368.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_fgy3t")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_b3jhm")
+
+[node name="reset button" type="Button" parent="."]
+offset_right = 47.0
+offset_bottom = 31.0
+text = "reset"
+
+[connection signal="pressed" from="reset button" to="." method="_on_reset_button_pressed"]

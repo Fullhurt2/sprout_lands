@@ -1,0 +1,69 @@
+[gd_scene load_steps=4 format=3 uid="uid://doodt87uehrhh"]
+
+[ext_resource type="Texture2D" uid="uid://kuo3xdpv5bnu" path="res://res/ui/buttons/server_info_button_normal_288x64.png" id="1_mxixt"]
+[ext_resource type="Texture2D" uid="uid://cwelykaehvnxg" path="res://res/ui/buttons/server_info_button_pressed_288x64.png" id="2_wssmb"]
+[ext_resource type="Script" uid="uid://bn10durx316t" path="res://src/scenes/button/server_info_button.gd" id="3_wssmb"]
+
+[node name="server info button" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+keep_pressed_outside = true
+texture_normal = ExtResource("1_mxixt")
+texture_pressed = ExtResource("2_wssmb")
+script = ExtResource("3_wssmb")
+
+[node name="hbox cont" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 10.0
+offset_top = -18.0
+offset_right = -17.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+
+[node name="server icon" type="TextureRect" parent="hbox cont"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="vbox cont" type="VBoxContainer" parent="hbox cont"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="host name label" type="Label" parent="hbox cont/vbox cont"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 16
+text = "Player"
+vertical_alignment = 2
+
+[node name="room name label" type="Label" parent="hbox cont/vbox cont"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0.722553, 0.530457, 0.508674, 1)
+theme_override_font_sizes/font_size = 16
+text = "room name"
+vertical_alignment = 2
+
+[node name="players count label" type="Label" parent="hbox cont"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(28, 20)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.666667, 0.47451, 0.34902, 1)
+theme_override_font_sizes/font_size = 16
+text = "1/4"
+vertical_alignment = 2
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

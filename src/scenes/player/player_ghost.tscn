@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://cbeau2uv4mxp3"]
+
+[ext_resource type="Script" uid="uid://5wd4iwpftope" path="res://src/scenes/player/player_ghost.gd" id="1_gjjjl"]
+[ext_resource type="FontFile" uid="uid://cj7ie4spwkhw1" path="res://res/ui/fonts/RuneScape-ENA.ttf" id="2_4wkkd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nmuvk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gjjjl"]
+radius = 4.0
+
+[sub_resource type="Gradient" id="Gradient_4wkkd"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 0.305882)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4wkkd"]
+gradient = SubResource("Gradient_4wkkd")
+width = 1
+
+[node name="player ghost" type="CharacterBody2D"]
+z_index = 5
+script = ExtResource("1_gjjjl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -10)
+sprite_frames = SubResource("SpriteFrames_nmuvk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_gjjjl")
+
+[node name="margin" type="MarginContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.5
+offset_top = -27.0
+offset_right = 11.5
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="nickname" type="Label" parent="margin"]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0470588, 0.454902, 0.494118, 1)
+theme_override_fonts/font = ExtResource("2_4wkkd")
+theme_override_font_sizes/font_size = 8
+text = "Fullhurt"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="margin" type="MarginContainer" parent="margin"]
+layout_mode = 2
+theme_override_constants/margin_left = -2
+theme_override_constants/margin_top = -1
+theme_override_constants/margin_right = -1
+
+[node name="bg" type="TextureRect" parent="margin/margin"]
+layout_mode = 2
+texture = SubResource("GradientTexture1D_4wkkd")
+
+[connection signal="ready" from="." to="." method="_on_ready"]

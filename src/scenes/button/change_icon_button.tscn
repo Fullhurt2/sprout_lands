@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgdlh8jkr2ute"]
+
+[ext_resource type="Texture2D" uid="uid://cycg3s5bkj6kk" path="res://res/ui/buttons/icon_button_normal_36x36.png" id="1_71ncg"]
+[ext_resource type="Texture2D" uid="uid://ucrkwlcu8ck7" path="res://res/ui/buttons/icon_button_pressed_36x36.png" id="2_wstsw"]
+[ext_resource type="Script" uid="uid://co8wk3mdtyccu" path="res://src/scenes/button/change_icon_button.gd" id="4_w3tsx"]
+
+[node name="change icon button" type="TextureButton"]
+offset_right = 36.0
+offset_bottom = 36.0
+toggle_mode = true
+keep_pressed_outside = true
+texture_normal = ExtResource("1_71ncg")
+texture_pressed = ExtResource("2_wstsw")
+script = ExtResource("4_w3tsx")
+
+[node name="icon" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="toggled" from="." to="." method="_on_toggled"]

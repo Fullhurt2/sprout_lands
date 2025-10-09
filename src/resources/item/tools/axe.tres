@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dobqlj5ismr3s"]
+
+[ext_resource type="Script" uid="uid://dsm37c252p4yb" path="res://src/resources/item/item.gd" id="1_h734r"]
+[ext_resource type="Texture2D" uid="uid://crinqli0vgu1g" path="res://res/ui/icons/item/axe_icon.png" id="1_xk8vu"]
+
+[resource]
+script = ExtResource("1_h734r")
+item_name = "Топорик"
+icon = ExtResource("1_xk8vu")
+type = "Axe"
+metadata/_custom_type_script = "uid://dsm37c252p4yb"

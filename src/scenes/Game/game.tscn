@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://h3jai6hcing2"]
+
+[ext_resource type="Script" uid="uid://bs0jyv3tdxcro" path="res://src/scenes/Game/game.gd" id="1_rx6df"]
+
+[node name="Game" type="Node"]
+script = ExtResource("1_rx6df")
+
+[node name="не трогать" type="Node" parent="."]

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dw15fijyefs0j"]
+
+[ext_resource type="Texture2D" uid="uid://uhob43dcpqpv" path="res://res/ui/icons/item/grass_icon.png" id="1_x7s32"]
+[ext_resource type="Script" uid="uid://dsm37c252p4yb" path="res://src/resources/item/item.gd" id="1_x6763"]
+
+[resource]
+script = ExtResource("1_x6763")
+item_name = "Травв"
+icon = ExtResource("1_x7s32")
+type = "Idle"
+metadata/_custom_type_script = "uid://dsm37c252p4yb"

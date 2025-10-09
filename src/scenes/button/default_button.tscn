@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://7elk1lsdisti"]
+
+[ext_resource type="Texture2D" uid="uid://lg48q8exy6le" path="res://res/ui/buttons/button_normal_90x27.png" id="1_3kfnf"]
+[ext_resource type="Texture2D" uid="uid://d1620eyg2vjkp" path="res://res/ui/buttons/button_pressed_90x27.png" id="2_4ghor"]
+[ext_resource type="Script" uid="uid://b7q7ckxdcfofa" path="res://src/scenes/button/default_button.gd" id="3_ve3kn"]
+
+[node name="default button" type="TextureButton"]
+size_flags_horizontal = 4
+keep_pressed_outside = true
+texture_normal = ExtResource("1_3kfnf")
+texture_pressed = ExtResource("2_4ghor")
+script = ExtResource("3_ve3kn")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "фвф"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]

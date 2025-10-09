@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://cimgcpy2jsens"]
+
+[ext_resource type="Script" uid="uid://c2evdrekacrxm" path="res://src/scenes/hud/hud.gd" id="1_bd8hv"]
+[ext_resource type="PackedScene" uid="uid://db5xbgbrtxk8t" path="res://src/scenes/hud/joystick.tscn" id="1_drnvm"]
+[ext_resource type="PackedScene" uid="uid://cowjlx53l8tl3" path="res://src/scenes/button/interact_button.tscn" id="3_t8iek"]
+[ext_resource type="PackedScene" uid="uid://csj54irsduifc" path="res://src/scenes/hud/invenory.tscn" id="4_bd8hv"]
+[ext_resource type="PackedScene" uid="uid://dfhke5pgkdu0u" path="res://src/scenes/hud/weather_and_time.tscn" id="5_i7kav"]
+
+[node name="hud" type="CanvasLayer"]
+script = ExtResource("1_bd8hv")
+
+[node name="invenory" parent="." instance=ExtResource("4_bd8hv")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -119.0
+offset_right = 120.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="right side buttons" type="Control" parent="."]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 3
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+mouse_filter = 2
+
+[node name="interact button" parent="right side buttons" instance=ExtResource("3_t8iek")]
+position = Vector2(119, 228)
+
+[node name="control" type="CanvasLayer" parent="."]
+
+[node name="joystick margin" type="MarginContainer" parent="control"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 100
+
+[node name="joystick" parent="control/joystick margin" instance=ExtResource("1_drnvm")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="weather and time" parent="." instance=ExtResource("5_i7kav")]
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 113.0
+offset_bottom = 69.0
