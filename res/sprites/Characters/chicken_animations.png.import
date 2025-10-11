@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5271etlfuqrj"
-path="res://.godot/imported/Wooden_House_Walls_Tilset.png-b0624765f13171ec91cced2576b29cbf.ctex"
+uid="uid://d2cvumkxtfdlc"
+path="res://.godot/imported/chicken_animations.png-702e2575733d1db2a0ac6c848b8c78c0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://res/sprites/tilesets/Wooden_House_Walls_Tilset.png"
-dest_files=["res://.godot/imported/Wooden_House_Walls_Tilset.png-b0624765f13171ec91cced2576b29cbf.ctex"]
+source_file="res://res/sprites/Characters/chicken_animations.png"
+dest_files=["res://.godot/imported/chicken_animations.png-702e2575733d1db2a0ac6c848b8c78c0.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2hlfr2r6qaxn"
-path="res://.godot/imported/Sprout Lands defautlt palette snip.PNG-09a253f5c8c87924af4eb6a319f59bfe.ctex"
+uid="uid://bo4judodv773s"
+path="res://.godot/imported/cow_animations.png-fcbd2a9c0ba50de927a173654f18b775.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://res/sprites/Sprout Lands color pallet/Sprout Lands defautlt palette snip.PNG"
-dest_files=["res://.godot/imported/Sprout Lands defautlt palette snip.PNG-09a253f5c8c87924af4eb6a319f59bfe.ctex"]
+source_file="res://res/sprites/Characters/cow_animations.png"
+dest_files=["res://.godot/imported/cow_animations.png-fcbd2a9c0ba50de927a173654f18b775.ctex"]
 
 [params]
 
