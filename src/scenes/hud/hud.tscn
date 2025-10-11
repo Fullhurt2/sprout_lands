@@ -62,3 +62,14 @@ offset_left = 15.0
 offset_top = 15.0
 offset_right = 113.0
 offset_bottom = 69.0
+
+[node name="fall asleep" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -87.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "fall asleep"
+
+[connection signal="pressed" from="fall asleep" to="." method="_on_fall_asleep_pressed"]

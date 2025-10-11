@@ -4,6 +4,7 @@ var player_animations_cache := {}
 var player_icons_cache := {}
 var player_items_cache := {}
 var weather_icons_cache := {}
+var plants_cache := {}
 
 var moving_frame_size := Vector2(20, 20)
 var chopping_frame_size := Vector2(34, 32)
@@ -59,3 +60,8 @@ func get_item_icon(item: String) -> Texture2D:
 	if !player_items_cache.has(item):
 		player_items_cache[item] = load("res://res/ui/icons/item/"+ item +"_icon.png")
 	return player_items_cache[item]
+
+func get_plant_icon(plant: String) -> Texture2D:
+	if !plants_cache.has(plant):
+		plants_cache[plant] = load("res://res/sprites/plants/"+ plant +".png")
+	return plants_cache[plant]

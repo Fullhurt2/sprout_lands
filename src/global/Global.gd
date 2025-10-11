@@ -15,3 +15,6 @@ var target_tile: Vector2i:
 
 
 var parallax_scroll_offset := Vector2(0, 0)
+
+
+var plants_array := {}

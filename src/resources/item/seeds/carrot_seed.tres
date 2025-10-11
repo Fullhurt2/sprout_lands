@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cpkpipucf81gf"]
+
+[ext_resource type="Script" uid="uid://dsm37c252p4yb" path="res://src/resources/item/item.gd" id="1_kif6l"]
+[ext_resource type="Texture2D" uid="uid://bqgpjjcm3vnk7" path="res://res/ui/icons/item/carrot_seed_icon.png" id="1_nfgil"]
+
+[resource]
+script = ExtResource("1_kif6l")
+item_name = "Семена моркови"
+icon = ExtResource("1_nfgil")
+type = "Seed"
+seed_name = "carrot"
+metadata/_custom_type_script = "uid://dsm37c252p4yb"

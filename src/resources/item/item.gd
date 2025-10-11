@@ -6,3 +6,4 @@ class_name Item
 @export_enum("Seed", "Idle", "Axe", "Hoe", "Water_can")
 var type: String
 var count := 0
+@export var seed_name := ""

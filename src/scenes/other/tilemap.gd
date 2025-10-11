@@ -9,12 +9,16 @@ var neighbor_offsets := [Vector2i(-1, -1), Vector2i(0, -1), Vector2i(1, -1), Vec
 
 func _ready() -> void:
 	Signals.tilling_tile.connect(_tilling_tile)
+	Signals.check_planting.connect(_check_planting)
 	if !multiplayer.is_server():
 		rpc_id(1, "serialize_tilemap", multiplayer.get_unique_id())
 
 
 func _tilling_tile(pos: Vector2i) -> void:
 	rpc_id(1, "tilling_logic", pos)
+
+func _check_planting(pos: Vector2i) -> void:
+	rpc_id(1, "check_planting_on_host", pos, Global.choosed_item.seed_name)
 
 @rpc("any_peer", "call_local")
 func tilling_logic(pos: Vector2i) -> void:
@@ -61,3 +65,17 @@ func deserialize_tilemap(data: Array) -> void:
 	dirt.clear()
 	for entry in data:
 		dirt.set_cell(entry[0], entry[1], entry[2])
+
+
+@rpc("any_peer", "call_local")
+func check_planting_on_host(pos: Vector2i, plant_name: String) -> void:
+	if dirt.get_cell_source_id(pos/16) != -1:
+		Global.plants_array[pos] = {
+			"plant_name": plant_name,
+			"stage": 0
+		}
+		rpc("emit_planting_signal", pos, plant_name, 0)
+
+@rpc("call_local")
+func emit_planting_signal(pos: Vector2i, plant_name: String, stage: int) -> void:
+	Signals.planting.emit(pos, plant_name, stage)

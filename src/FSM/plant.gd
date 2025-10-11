@@ -3,7 +3,7 @@ extends State
 @export var idle: State
 @export var move: State
 
-var tilling_finished := false
+var planting_finished := false
 var timer := Timer.new()
 
 func _ready() -> void:
@@ -18,7 +18,7 @@ func enter() -> void:
 func process_frame(_delta: float) -> State:
 	if Global.player_direction != Vector2.ZERO:
 		return move
-	if tilling_finished == true:
+	if planting_finished == true:
 		return idle
 	return null
 
@@ -27,7 +27,8 @@ func process_physics(_delta: float) -> State:
 
 func exit() -> void:
 	timer.stop()
-	tilling_finished = false
+	planting_finished = false
 
 func _on_timer_timeout() -> void:
-	tilling_finished = true
+	planting_finished = true
+	Signals.check_planting.emit(Global.target_tile * 16)

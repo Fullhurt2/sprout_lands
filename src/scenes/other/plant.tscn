@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjjqqa3xxxu8q"]
+
+[ext_resource type="Script" uid="uid://hty5xmme28i6" path="res://src/scenes/other/plant.gd" id="1_ie0ue"]
+
+[node name="plant" type="Node2D"]
+script = ExtResource("1_ie0ue")
+
+[node name="sprite" type="Sprite2D" parent="."]
+centered = false
+hframes = 4

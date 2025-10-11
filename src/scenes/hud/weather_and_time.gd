@@ -14,6 +14,7 @@ var day_time := 5: # [0-4]
 			change_background()
 
 func _ready() -> void:
+	Signals.day_passed.connect(_day_passed)
 	background_color.color = Color(colors[int((time_arrow.rotation_degrees + 90.0) / 36)])
 
 func _process(_delta: float) -> void:
@@ -39,3 +40,7 @@ func get_weather_icon() -> void:
 	subtexture.atlas = weather_icons
 	subtexture.region = region
 	weather_icon.texture = subtexture
+
+
+func _day_passed() -> void:
+	1

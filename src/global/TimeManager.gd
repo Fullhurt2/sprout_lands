@@ -13,6 +13,7 @@ var day_type := 0
 
 func _ready() -> void:
 	multiplayer.peer_connected.connect(_on_peer_connected)
+	Signals.fell_asleep.connect(_set_new_day)
 	set_physics_process(false)
 
 func _physics_process(delta: float) -> void:
@@ -23,11 +24,12 @@ func start_time() -> void:
 	set_day_type()
 
 
-func set_new_day() -> void:
+func _set_new_day() -> void:
 	days_lived += 1
 	day_of_the_week = day_of_the_week + 1 if day_of_the_week != 6 else 0
 	time = 0.0
 	set_day_type()
+	Signals.day_passed.emit()
 
 func set_day_type() -> void:
 	var total = CLEAR_DAY_CHANCE + CLOUDY_DAY_CHANCE + RAINY_DAY_CHANCE
