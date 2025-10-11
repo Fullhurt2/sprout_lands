@@ -18,6 +18,7 @@ func get_player_animations(skin: String) -> SpriteFrames:
 		_add_animation(animations, "chopping", skin, 8)
 		_add_animation(animations, "tilling", skin, 8)
 		_add_animation(animations, "watering", skin, 13)
+		_add_animation(animations, "planting", skin, 13)
 		player_animations_cache[skin] = animations
 	return player_animations_cache[skin]
 
@@ -34,7 +35,7 @@ func _add_animation(animations: SpriteFrames, animation_name: String, skin: Stri
 			frame_size = chopping_frame_size
 		elif animation_name == "tilling":
 			frame_size = tilling_frame_size
-		elif animation_name == "watering":
+		elif animation_name == "watering" or animation_name == "planting":
 			frame_size = watering_frame_size
 		else:
 			frame_size = moving_frame_size

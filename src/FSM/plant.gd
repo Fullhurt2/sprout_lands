@@ -13,7 +13,7 @@ func _ready() -> void:
 
 func enter() -> void:
 	timer.start(1.3)
-	parent.play_animation("watering")
+	parent.play_animation("planting")
 
 func process_frame(_delta: float) -> State:
 	if Global.player_direction != Vector2.ZERO:

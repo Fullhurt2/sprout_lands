@@ -7,8 +7,8 @@
 [ext_resource type="Script" uid="uid://cbfg3g62svft5" path="res://src/FSM/move.gd" id="5_6gf5d"]
 [ext_resource type="FontFile" uid="uid://cj7ie4spwkhw1" path="res://res/ui/fonts/RuneScape-ENA.ttf" id="5_lh6av"]
 [ext_resource type="Script" uid="uid://ba62fneuq7ki7" path="res://src/FSM/chop.gd" id="6_6ap8y"]
-[ext_resource type="Script" uid="uid://dt1u1036ugu5m" path="res://src/scenes/player/water.gd" id="7_w8ig4"]
-[ext_resource type="Script" uid="uid://caqbbosx0df1h" path="res://src/scenes/player/seed.gd" id="8_mc3vd"]
+[ext_resource type="Script" uid="uid://dt1u1036ugu5m" path="res://src/FSM/water.gd" id="7_w8ig4"]
+[ext_resource type="Script" uid="uid://caqbbosx0df1h" path="res://src/FSM/plant.gd" id="8_mc3vd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cx3ie"]
 animations = [{
@@ -59,13 +59,13 @@ gizmo_extents = 5.0
 script = ExtResource("3_n52bt")
 starting_state = NodePath("Idle")
 
-[node name="Idle" type="Node" parent="FSM" node_paths=PackedStringArray("move", "till", "chop", "water", "seed")]
+[node name="Idle" type="Node" parent="FSM" node_paths=PackedStringArray("move", "till", "chop", "water", "plant")]
 script = ExtResource("4_cx3ie")
 move = NodePath("../Move")
 till = NodePath("../Till")
 chop = NodePath("../Chop")
 water = NodePath("../Water")
-seed = NodePath("../Seed")
+plant = NodePath("../Plant")
 
 [node name="Move" type="Node" parent="FSM" node_paths=PackedStringArray("idle")]
 script = ExtResource("5_6gf5d")
@@ -86,7 +86,7 @@ script = ExtResource("7_w8ig4")
 idle = NodePath("../Idle")
 move = NodePath("../Move")
 
-[node name="Seed" type="Node" parent="FSM" node_paths=PackedStringArray("idle", "move")]
+[node name="Plant" type="Node" parent="FSM" node_paths=PackedStringArray("idle", "move")]
 script = ExtResource("8_mc3vd")
 idle = NodePath("../Idle")
 move = NodePath("../Move")

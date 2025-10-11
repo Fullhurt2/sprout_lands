@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cak1wfw467aoj"]
+
+[ext_resource type="Texture2D" uid="uid://egs2vfqd5fk3" path="res://res/ui/icons/item/wheat_seed_icon.png" id="1_kpak5"]
+[ext_resource type="Script" uid="uid://dsm37c252p4yb" path="res://src/resources/item/item.gd" id="2_t2sy7"]
+
+[resource]
+script = ExtResource("2_t2sy7")
+item_name = "Семена пшеницы"
+icon = ExtResource("1_kpak5")
+type = "Seed"
+metadata/_custom_type_script = "uid://dsm37c252p4yb"

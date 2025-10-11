@@ -1,6 +1,6 @@
 extends Control
 
-var axe := preload("res://src/resources/item/tools/axe.tres")
+var wheat_seed := preload("res://src/resources/item/seeds/wheat_seed.tres")
 var hoe := preload("res://src/resources/item/tools/hoe.tres")
 var water_can := preload("res://src/resources/item/tools/water_can.tres")
 
@@ -14,7 +14,7 @@ var move_items: Array[Dictionary]
 var icon_offset := Vector2(5.0, 5.0)
 
 var backpack_slots := {} #0 - 13
-var hotbar_slots = {0: hoe, 1: axe, 2: water_can} #0 - 5
+var hotbar_slots = {0: hoe, 1: wheat_seed, 2: water_can} #0 - 5
 
 var is_backpack_open := false:
 	set(value):

@@ -4,7 +4,7 @@ extends State
 @export var till: State
 @export var chop: State
 @export var water: State
-@export var seed: State
+@export var plant: State
 
 var is_interacting := false
 
@@ -27,7 +27,7 @@ func process_frame(_delta: float) -> State:
 		elif Global.choosed_item.type == "Water_can":
 			return water
 		elif Global.choosed_item.type == "Seed":
-			return seed
+			return plant
 	return null
 
 func process_physics(_delta: float) -> State:
