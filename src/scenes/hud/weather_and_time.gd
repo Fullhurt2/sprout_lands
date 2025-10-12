@@ -43,4 +43,4 @@ func get_weather_icon() -> void:
 
 
 func _day_passed() -> void:
-	1
+	change_background()

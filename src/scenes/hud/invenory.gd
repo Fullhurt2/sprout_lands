@@ -1,6 +1,8 @@
 extends Control
 
 var wheat_seed := preload("res://src/resources/item/seeds/wheat_seed.tres")
+var tomato_seed := preload("res://src/resources/item/seeds/tomato_seed.tres")
+var carrot_seed := preload("res://src/resources/item/seeds/carrot_seed.tres")
 var hoe := preload("res://src/resources/item/tools/hoe.tres")
 var water_can := preload("res://src/resources/item/tools/water_can.tres")
 
@@ -14,7 +16,7 @@ var move_items: Array[Dictionary]
 var icon_offset := Vector2(5.0, 5.0)
 
 var backpack_slots := {} #0 - 13
-var hotbar_slots = {0: hoe, 1: wheat_seed, 2: water_can} #0 - 5
+var hotbar_slots = {0: hoe, 1: water_can, 2: wheat_seed, 3: tomato_seed, 4: carrot_seed, 5: wheat_seed} #0 - 5
 
 var is_backpack_open := false:
 	set(value):
@@ -66,7 +68,7 @@ func move_item(from_hotbar: bool, from_index: int, to_hotbar: bool, to_index: in
 	var from_pos = hotbar_slots_container.get_child(from_index).global_position + icon_offset if from_hotbar else backpack_slots_container.get_child(from_index).global_position + icon_offset
 	from_icon.global_position = from_pos
 	
-	to_icon.texture = to_item.icon if to_item != null else to_icon.texture
+	to_icon.texture = to_item.icon if to_item != null else null
 	var to_pos = hotbar_slots_container.get_child(to_index).global_position + icon_offset if to_hotbar else backpack_slots_container.get_child(to_index).global_position + icon_offset
 	to_icon.global_position = to_pos
 	
@@ -75,8 +77,8 @@ func move_item(from_hotbar: bool, from_index: int, to_hotbar: bool, to_index: in
 	
 	from_tween = get_tree().create_tween()
 	to_tween = get_tree().create_tween()
-	from_tween.tween_property(from_icon, "global_position", to_pos, 0.15)
-	to_tween.tween_property(to_icon, "global_position", from_pos, 0.15)
+	from_tween.tween_property(from_icon, "global_position", to_pos, 0.10)
+	to_tween.tween_property(to_icon, "global_position", from_pos, 0.10)
 	await from_tween.finished
 	
 	change_data(from_hotbar, from_index, to_item)
