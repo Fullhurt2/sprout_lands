@@ -16,7 +16,8 @@ func _ready() -> void:
 func change_stage(stage: int) -> void:
 	current_stage = stage
 	sprite.frame = current_stage
-	Global.plants_array[Vector2i(global_position)]["stage"] = current_stage
+	if multiplayer.is_server():
+		Global.plants_array[Vector2i(global_position)]["stage"] = current_stage
 
 
 func _on_day_passed() -> void:
